@@ -34,14 +34,10 @@ elif [[ "$OS" =~ "MINGW" || "$OS" =~ "MSYS" || "$OS" =~ "CYGWIN" ]]; then
   echo "- GDAL (https://gdal.org/download.html or via Conda: conda install -c conda-forge gdal)"
   echo "- Make and GCC (optional, for advanced features)"
   echo "- Python 3 and pip"
-  echo "Then run: pip install -e ."
   exit 0
 else
   echo "Unsupported OS: $OS"
   exit 1
 fi
-
-# Install Python dependencies
-pip install -e .
 
 echo "Setup complete!"
