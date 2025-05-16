@@ -2,13 +2,8 @@
 
 A minimal Python library to draw customized maps from [OpenStreetMap](https://www.openstreetmap.org/#map=12/11.0733/106.3078) created using the [osmnx](https://github.com/gboeing/osmnx), [matplotlib](https://matplotlib.org/), [shapely](https://shapely.readthedocs.io/en/stable/index.html) and [vsketch](https://github.com/abey79/vsketch) packages.
 
-# Prettymaps is now available as a streamlit app!
+![](https://github.com/marceloprates/prettymaps/raw/main/prints/heerhugowaard.png)
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live-blue?logo=streamlit)](https://prettymaps.streamlit.app/)
-
-[![image](https://github.com/user-attachments/assets/14e56496-9eab-4b31-ad05-6227d56cfbd2)](https://prettymaps.streamlit.app/)
-
-<!--![](https://github.com/marceloprates/prettymaps/raw/main/prints/heerhugowaard.png)-->
 
 This work is [licensed](LICENSE) under a GNU Affero General Public License v3.0 (you can make commercial use, distribute and modify this project, but must **disclose** the source code with the license and copyright notice)
 
@@ -16,19 +11,13 @@ This work is [licensed](LICENSE) under a GNU Affero General Public License v3.0 
 - Please keep the printed message on the figures crediting my repository and OpenStreetMap ([mandatory by their license](https://www.openstreetmap.org/copyright)).
 - I am personally **against** NFTs for their [environmental impact](https://earth.org/nfts-environmental-impact/), the fact that they're a [giant money-laundering pyramid scheme](https://twitter.com/smdiehl/status/1445795667826208770) and the structural incentives they create for [theft](https://twitter.com/NFTtheft) in the open source and generative art communities.
 - **I do not authorize in any way this project to be used for selling NFTs**, although I cannot legally enforce it. **Respect the creator**.
-- The [AeternaCivitas](https://magiceden.io/marketplace/aeterna_civitas) and [geoartnft](https://www.geo-nft.com/) projects have used this work to sell NFTs and refused to credit it. See how they reacted after being exposed: [AeternaCivitas](etc/NFT_theft_AeternaCivitas.jpg), [geoartnft](etc/NFT_theft_geoart.jpg).
+- The [AeternaCivitas](https://magiceden.io/marketplace/aeterna_civitas) and [geoartnft](https://www.geo-nft.com/) projects have used this work to sell NFTs and refused to credit it. See how they reacted after being exposed: [AeternaCivitas](https://github.com/marceloprates/prettymaps/raw/main/pictures/NFT_theft_AeternaCivitas.jpg), [geoartnft](https://github.com/marceloprates/prettymaps/raw/main/pictures/NFT_theft_geoart.jpg).
 - **I have closed my other generative art projects on Github and won't be sharing new ones as open source to protect me from the NFT community**.
 
 <a href='https://ko-fi.com/marceloprates_' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## As seen on [Hacker News](https://web.archive.org/web/20210825160918/https://news.ycombinator.com/news):
 ![](https://github.com/marceloprates/prettymaps/raw/main/prints/hackernews-prettymaps.png)
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=marceloprates/prettymaps&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=marceloprates/prettymaps&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=star-history/star-history&type=Date" />
-</picture>
 
 ## [prettymaps subreddit](https://www.reddit.com/r/prettymaps_/)
 ## [Google Colaboratory Demo](https://colab.research.google.com/github/marceloprates/prettymaps/blob/master/notebooks/examples.ipynb)
@@ -81,9 +70,12 @@ import prettymaps
 plot = prettymaps.plot('Stad van de Zon, Heerhugowaard, Netherlands')
 ```
 
+    Fetching geodataframes took 2.04 seconds
+
+
 
     
-![png](README_files/README_7_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_7_1.png)
     
 
 
@@ -101,9 +93,12 @@ plot = prettymaps.plot(
 )
 ```
 
+    Fetching geodataframes took 0.81 seconds
+
+
 
     
-![png](README_files/README_9_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_9_1.png)
     
 
 
@@ -200,6 +195,11 @@ prettymaps.presets()
     </tr>
     <tr>
       <th>10</th>
+      <td>pytest-temp-preset</td>
+      <td>{'layers': {'building': {'tags': {'building': ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
       <td>tijuca</td>
       <td>{'layers': {'perimeter': {}, 'streets': {'widt...</td>
     </tr>
@@ -378,9 +378,12 @@ plot = prettymaps.plot(
 )
 ```
 
+    Fetching geodataframes took 15.97 seconds
+
+
 
     
-![png](README_files/README_15_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_15_1.png)
     
 
 
@@ -399,9 +402,12 @@ plot = prettymaps.plot(
 )
 ```
 
+    Fetching geodataframes took 1.28 seconds
+
+
 
     
-![png](README_files/README_17_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_17_1.png)
     
 
 
@@ -415,6 +421,9 @@ import prettymaps
 plot = prettymaps.plot('Centro Histórico, Porto Alegre', show = False)
 plot.geodataframes['building']
 ```
+
+    Fetching geodataframes took 1.59 seconds
+
 
 
 
@@ -741,7 +750,7 @@ plot.geodataframes['building'][
 ].geometry[0]
 ```
 
-    /home/marcelo/anaconda3/envs/prettymaps/lib/python3.11/site-packages/geopandas/geoseries.py:648: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+    /opt/anaconda3/envs/prettymaps/lib/python3.11/site-packages/geopandas/geoseries.py:648: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
       val = getattr(super(), mtd)(*args, **kwargs)
 
 
@@ -749,7 +758,7 @@ plot.geodataframes['building'][
 
 
     
-![svg](README_files/README_21_1.svg)
+![svg](pictures/README/temp_readme_files/temp_readme_21_1.svg)
     
 
 
@@ -788,9 +797,12 @@ for ax,building in zip(np.concatenate(axes),buildings):
     ax.autoscale(); ax.axis('off'); ax.axis('equal')
 ```
 
+    Fetching geodataframes took 2.01 seconds
+
+
 
     
-![png](README_files/README_23_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_23_1.png)
     
 
 
@@ -816,6 +828,9 @@ _ = plot.ax.set_title(
 )
 ```
 
+    Fetching geodataframes took 3.78 seconds
+
+
 Use **plotter** mode to export a pen plotter-compatible SVG (thanks to abey79's amazing [vsketch](https://github.com/abey79/vsketch) library)
 
 
@@ -832,9 +847,12 @@ plot = prettymaps.plot(
 )
 ```
 
+    Fetching geodataframes took 3.89 seconds
+
+
 
     
-![png](README_files/README_27_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_27_1.png)
     
 
 
@@ -853,9 +871,12 @@ plot = prettymaps.plot(
 )
 ```
 
+    Fetching geodataframes took 16.55 seconds
+
+
 
     
-![png](README_files/README_29_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_29_1.png)
     
 
 
@@ -951,9 +972,14 @@ plot = prettymaps.multiplot(
 )
 ```
 
+    Fetching geodataframes took 0.97 seconds
+    Fetching geodataframes took 1.15 seconds
+    Fetching geodataframes took 0.79 seconds
+
+
 
     
-![png](README_files/README_33_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_33_1.png)
     
 
 
@@ -976,21 +1002,15 @@ plot = prettymaps.plot(
 )
 ```
 
-    The autoreload extension is already loaded. To reload it, use:
-      %reload_ext autoreload
-    make: Entering directory '/home/marcelo/.cache/elevation/SRTM1'
-    make: Nothing to be done for 'download'.
-    make: Leaving directory '/home/marcelo/.cache/elevation/SRTM1'
-    make: Entering directory '/home/marcelo/.cache/elevation/SRTM1'
-    make: Nothing to be done for 'all'.
-    make: Leaving directory '/home/marcelo/.cache/elevation/SRTM1'
-    make: Entering directory '/home/marcelo/.cache/elevation/SRTM1'
-    cp SRTM1.vrt SRTM1.2d5b6f11e0e74b44a9386ba897fb0852.vrt
-    make: Leaving directory '/home/marcelo/.cache/elevation/SRTM1'
-    make: Entering directory '/home/marcelo/.cache/elevation/SRTM1'
-    gdal_translate -q -co TILED=YES -co COMPRESS=DEFLATE -co ZLEVEL=9 -co PREDICTOR=2 -projwin -157.90125854957773 21.364471426268267 -157.81006761682832 21.244615177105388 SRTM1.2d5b6f11e0e74b44a9386ba897fb0852.vrt /home/marcelo/Projects/Art/prettymaps/notebooks/elevationa.tif
-    rm -f SRTM1.2d5b6f11e0e74b44a9386ba897fb0852.vrt
-    make: Leaving directory '/home/marcelo/.cache/elevation/SRTM1'
+    Fetching geodataframes took 24.92 seconds
+    curl -s -o spool/N21/N21W158.hgt.gz.temp https://s3.amazonaws.com/elevation-tiles-prod/skadi/N21/N21W158.hgt.gz && mv spool/N21/N21W158.hgt.gz.temp spool/N21/N21W158.hgt.gz
+    gunzip spool/N21/N21W158.hgt.gz 2>/dev/null || touch spool/N21/N21W158.hgt
+    gdal_translate -q -co TILED=YES -co COMPRESS=DEFLATE -co ZLEVEL=9 -co PREDICTOR=2 spool/N21/N21W158.hgt cache/N21/N21W158.tif 2>/dev/null || touch cache/N21/N21W158.tif
+    rm spool/N21/N21W158.hgt
+    gdalbuildvrt -q -overwrite SRTM1.vrt cache/N21/N21W158.tif
+    cp SRTM1.vrt SRTM1.5af18c5270144c688522a27abf3b23a0.vrt
+    gdal_translate -q -co TILED=YES -co COMPRESS=DEFLATE -co ZLEVEL=9 -co PREDICTOR=2 -projwin -157.90125854957773 21.364471426268274 -157.81006761682832 21.244615177105377 SRTM1.5af18c5270144c688522a27abf3b23a0.vrt /Users/marceloprates/Projects/Art/07_Data_Visualization_and_Maps/prettymaps/notebooks/elevation.tif
+    rm -f SRTM1.5af18c5270144c688522a27abf3b23a0.vrt
 
 
     WARNING:matplotlib.axes._base:Ignoring fixed y limits to fulfill fixed data aspect with adjustable data limits.
@@ -998,7 +1018,7 @@ plot = prettymaps.plot(
 
 
     
-![png](README_files/README_35_2.png)
+![png](pictures/README/temp_readme_files/temp_readme_35_2.png)
     
 
 
@@ -1023,8 +1043,11 @@ plot = prettymaps.plot(
 )
 ```
 
+    Fetching geodataframes took 21.47 seconds
+
+
 
     
-![png](README_files/README_37_0.png)
+![png](pictures/README/temp_readme_files/temp_readme_37_1.png)
     
 
