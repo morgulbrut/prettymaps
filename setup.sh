@@ -15,7 +15,7 @@ if [[ "$OS" == "Linux" ]]; then
   # Linux (Debian/Ubuntu)
   echo "Updating package list and installing dependencies for Linux..."
   sudo apt-get update
-  sudo apt-get install -y build-essential make gcc python3-dev libgdal-dev gdal-bin
+  sudo apt-get install -y build-essential make gcc libgdal-dev gdal-bin
   sudo apt-get clean
 
 elif [[ "$OS" == "Darwin" ]]; then
