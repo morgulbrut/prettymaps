@@ -30,6 +30,11 @@ jobs:
       - name: Build docs with MkDocs
         run: |
           mkdocs build
+      - name: List files after build
+        run: |
+          pwd
+          ls -l
+          ls -l site || true
       - name: Push site/ to site-artifact branch
         run: |
           git config --global user.name "github-actions[bot]"
