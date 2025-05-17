@@ -34,10 +34,20 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin site-artifact || true
-          git switch --orphan site-artifact
-          git rm -rf .
+          # Create orphan branch or switch to it
+          git checkout --orphan site-artifact
+          # Remove all files (tracked and untracked)
+          git rm -rf . || true
+          rm -rf *
+          # Copy site output to root
           cp -r site/* .
+          # Add a .nojekyll file to prevent GitHub Pages from ignoring files/folders starting with _
+          touch .nojekyll
           git add .
-          git commit -m "Update built site from main"
-          git push --force origin site-artifact 
+          # Only commit if there are files to commit
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m "Update built site from main"
+            git push --force origin site-artifact
+          fi 
