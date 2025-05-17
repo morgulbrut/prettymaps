@@ -2,7 +2,7 @@
 # This workflow builds documentation from the 'docs/' folder using mkdocs.yml in the repo root
 # and deploys the static site to GitHub Pages.
 
-name: Build Docs and Push Site
+name: Build and Deploy Docs
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  build-and-push-site:
+  build-and-deploy-docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,25 +35,8 @@ jobs:
           pwd
           ls -l
           ls -l site || true
-      - name: Push site/ to site-artifact branch
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan site-artifact
-          # Remove everything except .git
-          find . -mindepth 1 ! -regex '^./.git\(/.*\)?' -delete
-          # Check if site/ exists and contains at least one file
-          if [ ! -d site ] || [ "$(find site -type f | wc -l)" -eq 0 ]; then
-            echo "site/ directory does not exist or is empty. MkDocs build may have failed."
-            exit 1
-          fi
-          # Copy site output to root (including hidden files)
-          cp -a site/. .
-          touch .nojekyll
-          git add .
-          if git diff --cached --quiet; then
-            echo 'No changes to commit'
-          else
-            git commit -m "Update built site from main"
-            git push --force origin site-artifact
-          fi 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site 
