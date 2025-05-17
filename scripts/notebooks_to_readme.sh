@@ -27,7 +27,7 @@ mv "$PICTURES_DIR/temp_readme.md" "$README_FILE"
 # (No-op if already in place)
 
 # Update image links in README.md to point to pictures/README/
-sed -i '' 's|(temp_readme_files/|(pictures/README/temp_readme_files/|g' "$README_FILE"
+sed -i 's|(temp_readme_files/|(pictures/README/temp_readme_files/|g' "$README_FILE"
 
 # Optionally, clean up any old temp_readme_files in root
 # rm -rf temp_readme_files
