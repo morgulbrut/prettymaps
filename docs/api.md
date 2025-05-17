@@ -1,5 +1,7 @@
 # API Reference
 
-This page will contain the API reference for Prettymaps.
+This section is auto-generated from the Prettymaps source code.
 
-_More details coming soon!_ 
+::: prettymaps.draw
+
+::: prettymaps.fetch 
