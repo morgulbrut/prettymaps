@@ -42,8 +42,8 @@ jobs:
           git checkout --orphan site-artifact
           # Remove everything except .git
           find . -mindepth 1 ! -regex '^./.git\(/.*\)?' -delete
-          # Check if site/ exists and is not empty
-          if [ ! -d site ] || [ -z "$(ls -A site)" ]; then
+          # Check if site/ exists and contains at least one file
+          if [ ! -d site ] || [ "$(find site -type f | wc -l)" -eq 0 ]; then
             echo "site/ directory does not exist or is empty. MkDocs build may have failed."
             exit 1
           fi
