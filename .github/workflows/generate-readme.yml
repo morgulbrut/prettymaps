@@ -36,7 +36,7 @@ jobs:
 
       - name: Execute the notebook (run all cells)
         run: |
-          jupyter nbconvert --to notebook --execute notebooks/examples.ipynb --output notebooks/examples.ipynb
+          jupyter nbconvert --to notebook --execute notebooks/examples.ipynb --output examples.ipynb --output-dir notebooks
 
       - name: Run notebooks_to_readme.sh
         run: |
