@@ -5,6 +5,15 @@ import sys
 import os
 import io
 
+def download_svg():
+    """
+    Creates additional map in SVG format
+    """
+    fig_path = "/tmp/generated_map_download.svg"
+    plt.savefig(fig_path, format="svg", bbox_inches="tight", dpi=150)
+    return fig_path
+
+
 # Set Streamlit to use the wide layout
 st.set_page_config(layout="wide")
 
@@ -166,7 +175,7 @@ with cols[1]:
             with open(fig_path, "wb") as f:
                 f.write(st.session_state.last_image.getbuffer())
 
-            # Provide a download button
+            # Provide a download button for PNG file
             with open(fig_path, "rb") as file:
                 btn = st.download_button(
                     label="Download Map",
@@ -175,6 +184,19 @@ with cols[1]:
                     mime="image/png",
                     use_container_width=True,
                 )
+
+            # Provide a download button for SVG file
+            svg_path = download_svg()
+            with open(svg_path, "rb") as file:
+                btn = st.download_button(
+                    label="Download Map as SVG",
+                    data=file,
+                    file_name=f"{query}.svg",
+                    mime="image/svg",
+                    use_container_width=True,
+                )
+            
+
 
             st.image(st.session_state.last_image, use_container_width=True)
 
