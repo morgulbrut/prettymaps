@@ -62,18 +62,35 @@
         }
     },
     "style": {
-        "perimeter": {},
-        "background": {},
-        "green": {},
-        "forest": {},
-        "water": {},
-        "beach": {},
-        "parking": {},
-        "streets": {},
-        "building": {}
+        "perimeter": {
+            "stroke": 1
+        },
+        "background": {
+            "stroke": 2
+        },
+        "green": {
+            "stroke": 3
+        },
+        "forest": {
+            "stroke": 4
+        },
+        "water": {
+            "stroke": 5
+        },
+        "beach": {
+            "stroke": 6
+        },
+        "parking": {
+            "stroke": 7
+        },
+        "streets": {
+            "stroke": 8
+        },
+        "building": {
+            "stroke": 9
+        }
     },
     "circle": null,
     "radius": false,
     "dilate": null
-}
 }
