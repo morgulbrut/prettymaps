@@ -40,7 +40,7 @@ with cols[0]:
     query = st.text_area(
         "Location", value="Stad van de Zon, Heerhugowaard, Netherlands", height=86
     )
-    radius = st.slider("Radius (km)", 0.2, 3, 0.7, step=0.1)
+    radius = st.slider("Radius (km)", 0.2, 4.0, 0.7, step=0.1)
     circular = st.checkbox("Circular map", value=False)
 
     # Preset selector
@@ -76,7 +76,7 @@ with cols[0]:
     with page_size_col:
         page_size = st.selectbox(
             "Page Size",
-            ["A4", "A5", "Square"],
+            ["A3", "A4", "A5", "Square"],
             index=0,
             # , "A3", "A2", "A1", "Custom"], index=0
         )
