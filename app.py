@@ -40,7 +40,7 @@ with cols[0]:
     query = st.text_area(
         "Location", value="Stad van de Zon, Heerhugowaard, Netherlands", height=86
     )
-    radius = st.slider("Radius (km)", 0.5, 1.5, 0.75, step=0.25)
+    radius = st.slider("Radius (km)", 0.2, 3, 0.75, step=0.1)
     circular = st.checkbox("Circular map", value=False)
 
     # Preset selector
