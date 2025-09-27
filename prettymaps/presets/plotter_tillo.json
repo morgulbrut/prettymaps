@@ -63,31 +63,31 @@
     },
     "style": {
         "perimeter": {
-            "stroke": 1
+            "fc": "#2F3737"
         },
         "background": {
-            "stroke": 2
+            "fc": "#FFFFFFF"
         },
         "green": {
-            "stroke": 3
+            "fc": "#B3EE3A"
         },
         "forest": {
-            "stroke": 4
+            "fc": "#458B00"
         },
         "water": {
-            "stroke": 5
+            "fc": "#6495ED"
         },
         "beach": {
-            "stroke": 6
+            "fc": "#104E8B"
         },
         "parking": {
-            "stroke": 7
+            "fc": "#444444"
         },
         "streets": {
-            "stroke": 8
+            "fc": "#666666"
         },
         "building": {
-            "stroke": 9
+            "fc": "#8B2323"
         }
     },
     "circle": null,
